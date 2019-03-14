@@ -1,0 +1,278 @@
+input[type=text], select {
+    padding: 12px;
+    border-radius: 4px;
+    resize: vertical;
+    border: 1px solid darkgreen;
+    width: 70%;
+}
+
+label {
+    font-size: 15px;
+    padding: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+button[type=submit-number] {
+    background-color: darkslateblue;
+    color: white;
+    padding: 12px 20px;
+    border: 1px solid #006400;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 120px;
+    margin-left: 40px;
+}
+
+button[type=submit-bet] {
+    background-color: #3e7e90;
+    color: white;
+    padding: 12px 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    float: none;
+    width: 150px;
+    margin-left: 110px;
+    margin-top: 30px;
+    height: 60px;
+    font-size: 17px;
+    border: 1px solid green;
+}
+
+.body {
+    background-color: #13122fd4;
+}
+
+.container {
+    background-color: #eaeaeac9;
+    height: 350px;
+    width: 18%;
+    float: left;
+    margin-left: 100px;
+    margin-right: 8%;
+    border: 10px solid #8fa0a0;
+    padding-right: 40px;
+    border-radius: 20px;
+}
+
+.label {
+    float: left;
+    width: 30%;
+}
+
+.input {
+    float: left;
+    width: 30%;
+    margin-top: 6px;
+}
+
+.row {
+    content: "";
+    display: table;
+    clear: both;
+    color: #000;
+    width: 100%;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+.number {
+    text-align: center;
+    background-color: red;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: grid;
+    font-size: xx-large;
+    float: left;
+    margin-left: 10px;
+}
+
+.divTable {
+    display: table;
+    width: 30%;
+    height: 700px;
+    float: left;
+    border: 20px solid black;
+    border-radius: 10px;
+}
+
+.divTableRow {
+    display: table-row;
+}
+
+.divTableCell {
+    display: table-cell;
+    height: 60px;
+    width: 60px;
+    padding: 0px;
+    background-color: black;
+    text-align: center;
+}
+
+.divTableBody {
+    display: table-row-group;
+}
+
+.imageBall {
+    width: 60px;
+    border-radius: 40px;
+    height: 60px;
+}
+
+.button-balls {
+    background-color: black;
+    width: 100%;
+}
+
+.button-balls:hover {
+    background-color: #4ca44c !important;
+}
+
+button[type=submit-bet]:hover {
+    background-color: #2d474e;
+}
+
+.betCombination {
+    margin: 100px !important;
+}
+
+.allBets {
+    width: 35%;
+    float: left;
+}
+
+.labelId {
+    border-right: 1px solid black;
+    width: 5%;
+    text-align: center;
+}
+
+.labelCombination {
+    width: 15%;
+    text-align: center;
+    border-right: 1px solid black;
+}
+
+.labelStakeAmount {
+    border-right: 1px solid black;
+    width: 10%;
+    text-align: center;
+}
+
+.labelStatus {
+    border-right: 1px solid black;
+    width: 8%;
+    text-align: center;
+}
+
+.labelWinAmount {
+    text-align: center;
+    width: 9%;
+    border-right: 1px solid black;
+}
+
+.labelDate {
+    text-align: center;
+    width: 11%;
+}
+
+.statusHeader {
+    background-color: #3e7e90;
+    color: white;
+    border-bottom: 1px solid black;
+    width: 65%;
+    float: left;
+}
+
+.statusForm {
+    background-color: #f2f2f2;
+    height: 300px;
+    width: 18%;
+    float: left;
+    margin-left: 100px;
+    margin-right: 7%;
+    padding-right: 40px;
+    border: 10px solid #8fa0a0;
+    border-radius: 20px;
+}
+
+.statusRow {
+    color: white;
+    width: 65%;
+    float: left;
+    height: 700px;
+}
+
+.statusId {
+    border-right: 1px solid black;
+    width: 5%;
+    text-align: center;
+}
+
+.statusCombination {
+    width: 15%;
+    text-align: center;
+    border-right: 1px solid black;
+}
+
+.statusBetAmount {
+    border-right: 1px solid black;
+    width: 10%;
+    text-align: center;
+}
+
+.statusStatus {
+    border-right: 1px solid black;
+    width: 8%;
+    text-align: center;
+}
+
+.statusWinAmount {
+    text-align: center;
+    width: 9%;
+    border-right: 1px solid black;
+}
+
+.statusDate {
+    text-align: center;
+    width: 12%;
+}
+
+.insertRow {
+    background-color: #a29696;
+    border: 1px solid black;
+}
+
+.scroll {
+    overflow: auto;
+    overflow-x: hidden;
+    width: 65.9%;
+}
+
+.errorMessage {
+    width: 100%;
+    height: 50px;
+    margin-top: 25%;
+    color: white;
+    background-color: #e04040;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 20px;
+    line-height: 45px;
+    border: 3px solid #ab9d9d;
+}
+
+.successMessage {
+    width: 100%;
+    height: 50px;
+    margin-top: 25%;
+    color: white;
+    background-color: green;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 3px solid #ab9d9d;
+}
+
+

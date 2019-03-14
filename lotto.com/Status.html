@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="./lotto.com/css/style.css">
+    <script type="text/javascript" src="./lotto.com/js/Bets.js"></script>
+    <script type="text/javascript" src="./lotto.com/js/ResponseMessage.js"></script>
+    <script type="text/javascript" src="./lotto.com/js/PageRoutes.js"></script>
+</head>
+<body class="body">
+<div class="statusForm">
+    <form>
+        <div class="row">
+            <div class="label">
+                <label>USER ID</label>
+            </div>
+            <div class="input">
+                <input type="text" id="id" name="id" placeholder="Your id..">
+            </div>
+        </div>
+    </form>
+    <button id="statusOfBets" type="submit-bet" value="List of Bets" onclick="listOfBets()">Status of bets</button>
+    <button id="home" type="submit-bet" value="List of Bets" onclick="homePage()">Home</button>
+    <div id="responseMessage"></div>
+</div>
+<div class="listOfBets">
+    <div id="statusHeader" class="statusHeader">
+        <label class="labelId">ID</label>
+        <label class="labelCombination">COMBINATION</label>
+        <label class="labelCombination">WIN COMBINATION</label>
+        <label class="labelStakeAmount">BET AMOUNT</label>
+        <label class="labelStatus">STATUS</label>
+        <label class="labelWinAmount">WIN AMOUNT</label>
+        <label class="labelDate">PLACED DATE</label>
+    </div>
+    <div id="statusRow" class="statusRow"></div>
+</div>
+</div>
+</body>
+</html>
