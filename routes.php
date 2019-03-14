@@ -1,6 +1,6 @@
 <?php
 
-include 'classes/Route.php';
+include './api.lotto.com/classes/Route.php';
 
 Route::set('/', function () {
     BetController::CreateView('Home');

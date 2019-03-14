@@ -1,6 +1,6 @@
 <?php
 
-include './classes/DBConnection.php';
+include './api.lotto.com/classes/DBConnection.php';
 include 'Services.php';
 
 /**
