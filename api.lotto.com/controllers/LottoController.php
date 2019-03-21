@@ -6,7 +6,7 @@
  * Time: 18:11
  */
 
-include 'Controller.php';
+include_once 'Controller.php';
 
 /**
  * This controller is main Controller and they performs engine functions on lotto game.
@@ -43,7 +43,7 @@ class LottoController extends Controller
     */
     public function doSettlement()
     {
-        //Select las draw.
+        //Select last draw.
         $queryLastDraw   = "SELECT * FROM draws ORDER BY id DESC LIMIT 1";
         $dataDraw        = self::connection()->query($queryLastDraw)->fetch();
         $drawId          = $dataDraw['id'];
@@ -126,12 +126,6 @@ class LottoController extends Controller
                 ));
             }
         }
-
-        $array = array
-        (
-            "winCombination" => $drawCombination
-        );
-        self::services()->returnJson($array);
     }
 
     public function sleep()

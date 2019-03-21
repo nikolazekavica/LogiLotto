@@ -1,7 +1,7 @@
 <?php
 
-include './api.lotto.com/classes/DBConnection.php';
-include 'Services.php';
+include_once './api.lotto.com/classes/DBConnection.php';
+include_once './api.lotto.com/services/Services.php';
 
 /**
  * This controller is parent Controller and they performs view,connection and services.

@@ -1,6 +1,6 @@
 <?php
 
-include 'Controller.php';
+include_once 'Controller.php';
 
 /**
  * This controller performs operations on Bet.

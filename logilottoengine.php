@@ -1,6 +1,6 @@
 <?php
 
-include "api.lotto.com/LottoController.php";
+include "api.lotto.com/controllers/LottoController.php";
 
 $logilottoengine = new LottoController();
 

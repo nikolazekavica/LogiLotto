@@ -6,14 +6,10 @@
  *
  * @since 1.0.0
  */
+include_once './api.lotto.com/config/DBConfig.php';
+
 class DBConnection
 {
-    private static $serverName = "localhost";
-    private static $userName   = "root";
-    private static $password   = "";
-    private static $dbName     = "lotto";
-    private static $charset    = "utf8mb4";
-
     public static $connect;
 
     public static function connect()
@@ -21,8 +17,8 @@ class DBConnection
         if(!isset(self::$connect))
         {
             try{
-                $dsn="mysql:host=".self::$serverName.";dbname=".self::$dbName.";charset=".self::$charset;
-                self::$connect= new PDO($dsn,self::$userName,self::$password);
+                $dsn="mysql:host=".SERVERNAME.";dbname=".DBNAME.";charset=".CHARSET;
+                self::$connect= new PDO($dsn,USERNAME,PASSWORD);
                 self::$connect->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
                 return self::$connect;
