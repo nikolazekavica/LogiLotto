@@ -19,7 +19,7 @@ class StatusController extends Controller
         $data = json_decode(file_get_contents('php://input'), true);
 
         //Check if user id insert.
-        if ($data['clientId'] != "")
+        if ($data['clientId'] != "" && preg_match('/^[1-9][0-9]{0,15}$/', $data['clientId']))
         {
             $clientId = $data['clientId'];
 
@@ -31,7 +31,7 @@ class StatusController extends Controller
 
             if ($dataClient == 0)
             {
-                $message = "Error! User id not found.";
+                $message = "Error! User id not found or not valid";
                 self::services()->message("error",$message);
             }
             else

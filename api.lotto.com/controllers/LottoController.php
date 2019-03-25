@@ -63,19 +63,10 @@ class LottoController extends Controller
             if($numberOfMatchedBalls==0)
             {
                 //Update bet status in database.
-                $queryChangeBetStatus  = "UPDATE bets SET status = 'LOSE' WHERE id=(?);";
+                $queryChangeBetStatus  = "UPDATE bets SET status = 'LOSE',draw_id = (?) WHERE id=(?);";
                 $changeBetStatus       = self::connection()->prepare($queryChangeBetStatus);
 
                 $changeBetStatus->execute(array
-                (
-                    $dataActiveBets[$i]['id']
-                ));
-
-                //Set draw id to active bets.This is important for displaying draws in bet history table.
-                $queryAddDrawId = "UPDATE bets SET draw_id = (?) WHERE id=(?);";
-                $AddDrawId      = self::connection()->prepare($queryAddDrawId);
-
-                $AddDrawId->execute(array
                 (
                     $drawId,
                     $dataActiveBets[$i]['id']
@@ -89,19 +80,11 @@ class LottoController extends Controller
                     $dataActiveBets[$i]['stake_amount']
                 );
 
-                $queryAddDrawId = "UPDATE bets SET draw_id = (?) WHERE id=(?);";
+                $queryAddDrawId = "UPDATE bets SET draw_id = (?),status = 'WIN',win_amount =(?) WHERE id=(?);";
                 $AddDrawId      = self::connection()->prepare($queryAddDrawId);
                 $AddDrawId->execute(array
                 (
                     $drawId,
-                    $dataActiveBets[$i]['id']
-                ));
-
-                //Update bet status in database.
-                $queryUpdateBetStatus  = "UPDATE bets SET status = 'WIN',win_amount =(?) WHERE id=(?);";
-                $changeBetStatus       = self::connection()->prepare($queryUpdateBetStatus);
-                $changeBetStatus->execute(array
-                (
                     $winCash,
                     $dataActiveBets[$i]['id']
                 ));

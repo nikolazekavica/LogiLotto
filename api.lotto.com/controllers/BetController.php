@@ -19,11 +19,27 @@ class BetController extends Controller
     {
         $data = json_decode(file_get_contents('php://input'), true);
 
+        $checkCombination = true;
+        foreach ($data['combination'] as $key) {
+            if (!(is_numeric($key))) {
+                $checkCombination = false;
+                break;
+            }
+        }
+
         //Check if all parameters insert.
         if ($data['clientId'] != "" &&
+            preg_match('/^[1-9][0-9]{0,15}$/', $data['clientId']) &&
             !empty($data['combination']) &&
             $data['stakeAmount'] > 0
         ) {
+            //Check if all values from combination are integer.
+            if( $checkCombination == false){
+                $message = "Error! Some value in combination is not integer.";
+                self::services()->message("error",$message);
+                exit;
+            }
+
             $clientId    = $data['clientId'];
             $combination = $data['combination'];
             $stakeAmount = $data['stakeAmount'];
@@ -42,7 +58,8 @@ class BetController extends Controller
 
             //Check if bet combination has numbers from 1 to 60,if user id exists,if user has enough money for
             //bet and if bet combination has max seven numbers.
-            if (max($combination) > 60 || min($combination) < 1) {
+            if (max($combination) > 60 || min($combination) < 1)
+            {
                 $message = "Error! Some number in bet is bigger then 60 or less then 1.";
                 self::services()->message("error",$message);
             }
@@ -110,7 +127,7 @@ class BetController extends Controller
                 self::services()->message("success",$message);
             }
         } else {
-            $message = "Error! Some values not insert.";
+            $message = "Error! Some values not insert or not valid.";
             self::services()->message("error",$message);
         }
     }
